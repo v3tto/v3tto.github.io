@@ -3,44 +3,68 @@ html
     scroll-behavior: smooth;
 }
 
-body
-{
+body {
     width: 100vw;
     height: 100vh;
     margin: 0;
-    background-color: #10002B;
-    color: #E2CFEA;
-    display: grid;
-    grid-template: 1fr / 1fr 3fr;
-    font-family: "Catamaran", sans-serif;
+    background-color: #0c0021;
+    color: #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
-.aboutmebackground
+.home {
+    width: 95%;
+    height: 90%;
+    display: grid;
+    grid-template-areas:
+        "inicio aboutme"
+        "inicio proyectos"
+        "inicio contactos";
+    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 3fr;
+    gap: 3em;
+}
+
+.inicio {
+    grid-area: inicio;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(200px);
+    -webkit-backdrop-filter: blur(200px);
+    border-radius: 2em;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 16px 24px rgba(179, 0, 255, 0.1);
+    z-index: 1;
+    overflow: hidden;
+}
+
+.inicioBlur
 {
-    grid-area: 1 / 1 / 1 / 1;
-    background-color: #5A189A;
-    margin: 2em;
-    border-radius: 1.5em;
-    box-shadow: rgba(229, 209, 255)px 60px -12px inset, rgb(255, 255, 255) 0px 18px 36px -18px inset;
+    grid-area: inicio;
+    position: relative;
+    width: 70%;
+    height: 50%;
+    background-color: rgb(157, 78, 221);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: -1;
 }
 
 .aboutme
 {
-    grid-area: 1 / 1 / 1 / 1;
-    margin: 2em;
-    padding: 1em;
+    grid-area: aboutme;
 }
 
-.aboutme h1
+.proyectos
 {
-    
+    grid-area: proyectos;
 }
 
-.projects
+.contactos
 {
-    background-color: #5A189A;
-    margin: 2em;
-    border-radius: 1.5em;
-    opacity: 50%;
-    box-shadow: rgba(255, 255, 255, 0.6) 0px 1px 3px, rgb(255, 255, 255, 0.6) 0px 1px 2px;
+    grid-area: contactos;
 }
