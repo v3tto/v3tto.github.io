@@ -3,14 +3,39 @@ html
     scroll-behavior: smooth;
 }
 
+html, body
+{
+    overflow-x: hidden;
+}
+
+::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1b042f;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #3a0867;
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #590e9b;
+}
+
 body
 {
     width: 100vw;
-    height: 100vh;
+    height: auto;
     margin: 0;
     background-color: #10002b;
     color: #d0b2ef;
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     justify-content: center;
     font-family: "Varela Round", sans-serif;
@@ -21,13 +46,14 @@ body
 .home
 {
     width: 90%;
-    height: 90%;
+    height: 850px;
+    margin: 50px 0;
     display: grid;
     grid-template-areas:
         "inicio aboutme"
         "inicio proyectos"
         "inicio contactos";
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 3fr 3fr 2fr;
     grid-template-columns: 1fr 2fr;
     gap: 2em;
 }
@@ -78,7 +104,6 @@ body
     color: #d0b2ef;
 }
 
-
 .inicio, .inicioBlur
 {
     grid-area: inicio;
@@ -99,13 +124,13 @@ body
     grid-area: contactos;
 }
 
-.inicio, .aboutme, .proyectos, .contactos
+.inicio, .aboutme, .proyectos, .contactos, .projectInfo, .img0, .img1, .img2
 {
     position: relative;
     background-color: rgba(255, 255, 255, 0.05);
     backdrop-filter: blur(150px);
     -webkit-backdrop-filter: blur(150px);
-    border-radius: 2em;
+    border-radius: 1em;
     border: 1px solid rgba(255, 255, 255, 0.15);
     box-shadow: 2px 4px 6px #3c096c;
     z-index: 1;
@@ -113,7 +138,7 @@ body
     padding: 2em;
 }
 
-.inicioBlur, .aboutmeBlur, .proyectosBlur, .contactosBlur
+.inicioBlur, .aboutmeBlur, .proyectosBlur, .contactosBlur, .projectInfoBlur, .img0Blur, .img1Blur, .img2Blur
 {
     position: relative;
     width: 50%;
@@ -124,4 +149,44 @@ body
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -1;
+}
+
+.projectList
+{
+    width: 90%;
+    margin: 50px 0;
+    display: grid;
+    gap: 2em;
+}
+
+.project
+{
+    margin: 0;
+    display: grid;
+    grid-template-areas:
+        "projectInfo img0 img1"
+        "projectInfo img0 img2";
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: 5fr 1fr 1fr;
+    gap: 2em;
+}
+
+.projectInfo, .projectInfoBlur
+{
+    grid-area: projectInfo;
+}
+
+.img0, .img0Blur
+{
+    grid-area: img0;
+}
+
+.img1, .img1Blur
+{
+    grid-area: img1;
+}
+
+.img2, .img2Blur
+{
+    grid-area: img2;
 }
