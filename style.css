@@ -3,19 +3,24 @@ html
     scroll-behavior: smooth;
 }
 
-body {
+body
+{
     width: 100vw;
     height: 100vh;
     margin: 0;
-    background-color: #0c0021;
-    color: #ffffff;
+    background-color: #10002b;
+    color: #d0b2ef;
     display: flex;
     align-items: center;
     justify-content: center;
+    font-family: "Varela Round", sans-serif;
+    font-weight: 400;
+    font-style: normal;
 }
 
-.home {
-    width: 95%;
+.home
+{
+    width: 90%;
     height: 90%;
     display: grid;
     grid-template-areas:
@@ -23,48 +28,100 @@ body {
         "inicio proyectos"
         "inicio contactos";
     grid-template-rows: 1fr 1fr 1fr;
-    grid-template-columns: 1fr 3fr;
-    gap: 3em;
+    grid-template-columns: 1fr 2fr;
+    gap: 2em;
 }
 
-.inicio {
-    grid-area: inicio;
-    position: relative;
-    background-color: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(200px);
-    -webkit-backdrop-filter: blur(200px);
-    border-radius: 2em;
-    border: 1px solid rgba(255, 255, 255, 0.15);
-    box-shadow: 0 16px 24px rgba(179, 0, 255, 0.1);
-    z-index: 1;
-    overflow: hidden;
+.inicio
+{
+    display: grid;
+    grid-template-rows: 1fr 1fr 1fr 2fr;
 }
 
-.inicioBlur
+.inicio span
+{
+    font-size: 250px;
+    justify-self: center;
+}
+
+.material-symbols-outlined
+{
+    color: #3c096c;
+    font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 48;
+}
+
+.inicio h1
+{
+    font-size: 42px;
+    justify-self: center;
+}
+
+.inicio p
+{
+    text-align: left;
+    font-size: 24px;
+}
+
+.links
+{
+    display: grid;
+    grid-auto-rows: min-content;
+}
+
+.inicio a
+{
+    font-size: 24px;
+    color: #d0b2ef;
+}
+
+
+.inicio, .inicioBlur
 {
     grid-area: inicio;
+}
+
+.aboutme, .aboutmeBlur
+{
+    grid-area: aboutme;
+}
+
+.proyectos, .proyectosBlur
+{
+    grid-area: proyectos;
+}
+
+.contactos, .contactosBlur
+{
+    grid-area: contactos;
+}
+
+.inicio, .aboutme, .proyectos, .contactos
+{
     position: relative;
-    width: 70%;
+    background-color: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(150px);
+    -webkit-backdrop-filter: blur(150px);
+    border-radius: 2em;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 2px 4px 6px #3c096c;
+    z-index: 1;
+    overflow: hidden;
+    padding: 2em;
+}
+
+.inicioBlur, .aboutmeBlur, .proyectosBlur, .contactosBlur
+{
+    position: relative;
+    width: 50%;
     height: 50%;
-    background-color: rgb(157, 78, 221);
+    background: linear-gradient(to bottom right, #ce79ff, #690eb8);
     border-radius: 50%;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -1;
-}
-
-.aboutme
-{
-    grid-area: aboutme;
-}
-
-.proyectos
-{
-    grid-area: proyectos;
-}
-
-.contactos
-{
-    grid-area: contactos;
 }
