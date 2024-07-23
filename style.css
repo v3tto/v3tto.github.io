@@ -271,6 +271,7 @@ body
     z-index: 1;
     overflow: hidden;
     padding: 2em;
+    transition: transform 0.3s ease;
 }
 
 .inicioBlur, .aboutmeBlur, .proyectosBlur, .contactosBlur, .projectInfoBlur, .img0Blur, .img1Blur, .img2Blur
@@ -284,6 +285,14 @@ body
     left: 50%;
     transform: translate(-50%, -50%);
     z-index: -1;
+    transition: transform 0.3s ease;
+}
+
+.inicio:hover, .aboutme:hover, .proyectos:hover, .contactos:hover, .projectInfo:hover, .img0:hover, .img1:hover, .img2:hover 
+{
+    transform: scale(1.03);
+    backdrop-filter: blur(100px);
+    -webkit-backdrop-filter: blur(100px);
 }
 
 /* LA COSA PARA QUE SEA RESPONSIVA */
