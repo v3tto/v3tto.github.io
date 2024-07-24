@@ -32,7 +32,7 @@ body
     width: 100vw;
     height: auto;
     margin: 0;
-    background-color: #10002b;
+    background-color: #17092e;
     color: #d0b2ef;
     display: flex;
     flex-wrap: wrap;
@@ -95,6 +95,8 @@ body
     gap: 1em;
 }
 
+/* CONTACTOS */
+
 .contactos h1
 {
     margin: 0;
@@ -102,8 +104,10 @@ body
 
 .contactos a
 {
-    color: #690eb8;
+    color: #702eaa;
 }
+
+/* LISTA DE PROYECTOS */
 
 .projectListTitle h1
 {
@@ -353,6 +357,99 @@ body
 {
     body
     {
-        background-color: #0c093a;
+        font-size: medium;
+    }
+
+    .home
+    {
+        width: 90%;
+        height: auto;
+        margin: 50px 0;
+        margin-top: 2em;
+        display: grid;
+        grid-template-areas:
+            "inicio"
+            "aboutme"
+            "proyectos"
+            "contactos";
+        grid-template-rows: repeat(4, min-content);
+        grid-template-columns: 1fr;
+        gap: 2em;
+    }
+
+    .inicio
+    {
+        grid-template-rows: min-content 1fr;
+        grid-template-columns: 1fr;
+    }
+
+    .inicio span
+    {
+        font-size: 200px;
+    }
+
+    .inicio h1
+    {
+        font-size: 35px;
+        text-align: center;
+    }
+
+    .inicio p
+    {
+        font-size: 20px;
+    }
+
+    .proyectoContainer
+    {
+        display: grid;
+        grid-template-rows: 1fr 1fr;
+        grid-template-columns: 1fr;
+        gap: 1em;
+    }
+
+    .projectListTitle h1
+    {
+        font-size: 50px;
+    }
+
+    .projectListTitleShadow
+    {
+        width: 80%;
+    }
+
+    .project
+    {
+        grid-template-areas:
+            "projectInfo"
+            "img0"
+            "img1"
+            "img2";
+        grid-template-rows: repeat(4, min-content);
+        grid-template-columns: 1fr;
+    }
+
+    .img0 .img1, .img2
+    {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .img0Container, .img1Container, .img2Container
+    {
+        width: 100%;
+        height: 200px;
+    }
+
+    .img0Container img, .img1Container img, .img2Container img
+    {
+        width: auto;
+        height: 100%;
+    }
+
+    .inicioBlur, .aboutmeBlur, .proyectosBlur, .contactosBlur, .projectInfoBlur, .img0Blur, .img1Blur, .img2Blur
+    {
+        width: 70%;
+        height: 70%;
     }
 }
